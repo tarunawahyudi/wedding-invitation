@@ -76,7 +76,6 @@ export const guest = (() => {
         audio.play();
         audio.showButton();
 
-        theme.showButtonChangeTheme();
         setTimeout(animation, 1500);
     };
 
@@ -90,7 +89,7 @@ export const guest = (() => {
             storage('comment').clear();
             storage('tracker').clear();
         }
-        
+
         const info = document.getElementById('information');
         if (info && storage('information').get('info')) {
             info.remove();
@@ -109,10 +108,10 @@ export const guest = (() => {
                     item.remove();
                 }
             }
-           
+
             return;
         }
-        
+
         countDownDate();
         session.guest();
     };

@@ -120,12 +120,18 @@ export const theme = (() => {
         }
     };
 
+    const setDefault = () => {
+        onLight();
+        document.documentElement.setAttribute(THEME_BS_DATA, THEME_LIGHT);
+        theme.set('active', THEME_LIGHT);
+    }
+
     const check = () => {
         if (!theme.has('active')) {
             theme.set('active', THEME_LIGHT);
 
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                theme.set('active', THEME_DARK);
+                theme.set('active', THEME_LIGHT);
             }
         }
 
@@ -147,14 +153,11 @@ export const theme = (() => {
         }
     };
 
-    const showButtonChangeTheme = () => {
-        document.getElementById('button-theme').style.display = 'block';
-    };
 
     return {
         change,
         check,
         isDarkMode,
-        showButtonChangeTheme
+        setDefault
     };
 })();
