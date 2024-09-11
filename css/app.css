@@ -195,3 +195,13 @@ footer {
 .text-white {
     color: white;
 }
+
+.btn-main {
+    transition: 0.3s;
+    background-color: #dc354538;
+    border-color: #8b0dfd38;
+}
+
+.btn-main:hover {
+    background-color: #ff001838;
+}
